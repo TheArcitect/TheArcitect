@@ -1,297 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Schaeffer — What We Worship</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 18px;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fafafa;
-        }
-        
-        header {
-            padding: 2rem 1rem;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 3rem;
-        }
-        
-        .header-content {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .site-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-        
-        .site-title:hover {
-            color: #666;
-        }
-        
-        nav a {
-            font-size: 0.95rem;
-            color: #666;
-            text-decoration: none;
-            margin-left: 1.5rem;
-        }
-        
-        nav a:hover {
-            color: #1a1a1a;
-        }
-        
-        main {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 1.5rem 4rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .date {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 3rem;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-        }
-        
-        em {
-            font-style: italic;
-        }
-        
-        strong {
-            font-weight: 600;
-        }
-        
-        hr {
-            border: none;
-            text-align: center;
-            margin: 2.5rem 0;
-        }
-        
-        hr::before {
-            content: "—";
-            color: #ccc;
-            font-size: 1.5rem;
-        }
-        
-        blockquote {
-            border-left: 3px solid #e5e5e5;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            color: #444;
-        }
-        
-        .bio {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e5e5;
-            font-size: 0.95rem;
-            color: #666;
-            font-style: italic;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                font-size: 17px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav a {
-                margin-left: 0;
-                margin-right: 1.5rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R = C − A | The Law of Recognition</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#c4c4c4;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+::selection{background:#333;color:#fff}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+.container{max-width:720px;margin:0 auto;padding:60px 24px}
+.equation{font-size:72px;font-weight:400;color:#fff;letter-spacing:.04em;font-style:italic;text-align:center;line-height:1}
+.subtitle{font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:#666;margin-top:16px;font-family:'JetBrains Mono',monospace;text-align:center}
+.key-section{margin-top:48px;padding:20px 24px;border:1px solid #1a1a1a;border-radius:8px;background:#0d0d0d}
+.key-row{display:flex;gap:12px;align-items:center}
+.key-input{flex:1;background:#111;border:1px solid #2a2a2a;border-radius:4px;color:#e8e8e8;font-size:14px;font-family:'JetBrains Mono',monospace;padding:10px 14px;outline:none}
+.key-input:focus{border-color:#444}.key-input::placeholder{color:#444}
+.key-status{font-size:12px;font-family:'JetBrains Mono',monospace;margin-top:8px}
+.key-note{font-size:12px;color:#444;font-family:'JetBrains Mono',monospace;margin-top:8px;line-height:1.6}
+.prompt-text{font-size:28px;color:#e8e8e8;text-align:center;margin:48px 0 32px;line-height:1.4}
+.examples{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.example-btn{background:transparent;border:1px solid #2a2a2a;border-radius:6px;padding:14px 16px;color:#888;font-size:15px;font-family:'EB Garamond',Georgia,serif;text-align:left;cursor:pointer;line-height:1.5;transition:all .2s}
+.example-btn:hover{border-color:#555;color:#ccc}
+.example-featured{border-color:#4ade80;color:#aaa}
+.example-featured:hover{border-color:#4ade80;color:#e8e8e8}
+.or-divider{font-size:13px;color:#555;text-align:center;margin-bottom:20px;font-family:'JetBrains Mono',monospace}
+.input-area{width:100%;background:#111;border:1px solid #2a2a2a;border-radius:8px;color:#e8e8e8;font-size:18px;font-family:'EB Garamond',Georgia,serif;padding:16px 20px;resize:vertical;outline:none;line-height:1.6;min-height:100px}
+.input-area:focus{border-color:#444}.input-area::placeholder{color:#555}
+.submit-row{display:flex;justify-content:flex-end;margin-top:12px}
+.submit-btn{background:transparent;border:1px solid #e8e8e8;color:#e8e8e8;font-size:14px;font-family:'JetBrains Mono',monospace;padding:10px 28px;border-radius:4px;cursor:pointer;transition:all .2s}
+.submit-btn:hover{background:#1a1a1a}.submit-btn:disabled{opacity:.3;cursor:default}
+.footnote{font-size:13px;color:#444;text-align:center;margin-top:48px;line-height:1.8;font-family:'JetBrains Mono',monospace}
+.thinking{text-align:center;margin-top:48px}
+.thinking-q{font-size:20px;color:#888;font-style:italic;margin-bottom:48px;max-width:500px;margin-left:auto;margin-right:auto}
+.thinking-dots{font-size:18px;color:#e8e8e8;font-family:'JetBrains Mono',monospace}
+.thinking-sub{font-size:13px;color:#444;margin-top:24px;font-family:'JetBrains Mono',monospace}
+.result-q{font-size:17px;color:#666;font-style:italic;text-align:center;margin-top:32px;margin-bottom:16px}
+.verdict{display:inline-block;font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.15em;border:1px solid;padding:6px 20px;border-radius:4px;margin-bottom:24px}
+.verdict-wrap{text-align:center}
+.verdict-FORMALIZABLE{color:#4ade80;border-color:#4ade80}
+.verdict-PARTIALLY{color:#facc15;border-color:#facc15}
+.verdict-NOT{color:#f87171;border-color:#f87171}
+.verdict-INVALID{color:#94a3b8;border-color:#94a3b8}
+.result-box{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:8px;padding:28px 32px;max-height:60vh;overflow-y:auto;line-height:1.7;font-size:16px}
+.result-box h1{font-size:24px;color:#e8e8e8;margin:24px 0 12px;font-weight:400}
+.result-box h2{font-size:20px;color:#e8e8e8;margin:20px 0 8px;font-weight:400}
+.result-box h3{font-size:17px;color:#d0d0d0;margin:16px 0 6px;font-weight:400}
+.result-box p{margin:6px 0}.result-box strong{color:#e8e8e8}
+.result-box hr{border:none;border-top:1px solid #222;margin:20px 0}
+.reset-row{text-align:center;margin-top:28px}
+.reset-btn{background:transparent;border:1px solid #444;color:#888;font-size:13px;font-family:'JetBrains Mono',monospace;padding:10px 24px;border-radius:4px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{background:#1a1a1a;color:#ccc}
+.result-note{font-size:11px;color:#444;text-align:center;line-height:1.8;font-family:'JetBrains Mono',monospace;margin-top:12px}
+.footer{text-align:center;padding:24px 0;font-size:13px;font-family:'JetBrains Mono',monospace;opacity:.3;margin-top:40px}
+.hidden{display:none}
+</style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="/" class="site-title">Michael Schaeffer</a>
-            <nav>
-                <a href="/">Essays</a>
-            </nav>
-        </div>
-    </header>
-    
-    <main>
-        <h1>What We Worship</h1>
-        <p class="date">January 2026</p>
-        
-        <p>I've never put a flag on my house in my life. I'm 44 years old. I've owned homes. I've had opinions. But something about flags always felt like performance—a declaration for other people's benefit rather than my own clarity.</p>
-        
-        <p>Last month, I bought one. A flag that says <em>my god is love.</em> It's hanging outside my house in Denver right now. Because of a video I saw of a bishop standing on cathedral steps—Gothic arches behind him, a crowd of parishioners at his back, eggs splattered on the ground from the confrontation—blocking federal agents, declaring to their faces: "I don't know what god you worship—maybe an orange one—but my god is love."</p>
-        
-        <p>The video wrecked me. I shared it immediately. And because I was already thinking this could be the seed of something—an essay, maybe for The Atlantic, about the church reclaiming its moral voice—I went to Claude, Anthropic's AI assistant, to fact-check myself. Of course I did. If I was going to write about this bishop, I needed to know who he was. I wanted to understand the person behind a moment of such crystalline moral clarity.</p>
-        
-        <p>Why Claude? Why trust an AI for something this important? I'll come back to that.</p>
-        
-        <p>We discovered, together, that the bishop doesn't exist. The video was AI-generated. The bishop is fictional. The cathedral steps, the confrontation, the crowd behind him—all of it fabricated by an algorithm, produced by someone who sells courses on making money with AI-generated content.</p>
-        
-        <p>I haven't taken the flag down.</p>
-        
-        <hr>
-        
-        <p>Here's what I can't stop thinking about: That video moved me to action. Real action. A physical object now hangs on my house declaring something I believe. The "fake" produced something true. And I'm not embarrassed by this. I'm fascinated by it.</p>
-        
-        <p>Everyone worried about AI is asking the wrong question. They ask: "What if AI manipulates us? What if it moves us toward things that aren't real?" But I was moved toward love. Toward solidarity with vulnerable people—families separated, children afraid to go to school, a woman shot dead on a snowy street in Minneapolis. Toward declaring something publicly for the first time in my life. The output served love. Does the source matter?</p>
-        
-        <hr>
-        
-        <p>I've spent fifteen years as a yoga teacher. Before that, a decade in investment banking and building companies. I've lived in both worlds—the one that talks about love and the one that talks about metrics. And I can tell you: they're asking the same question. They just use different words.</p>
-        
-        <p>In yoga, we talk about love constantly. But most people hear "love" and think <em>sentiment</em>. They think it's soft. Unserious. Unmeasurable. They're wrong. Love, in any rigorous spiritual tradition, is not a feeling. It's a lens. The frame through which every decision passes. The question isn't whether you've <em>achieved</em> love—it's whether your apparatus is pointed toward it. Unfiltered. De-fogged. Defaulted back to its original setting before it got corrupted by metrics and self-interest. The operational question: <em>Does this serve the flourishing of the person in front of me, or does it serve something else?</em></p>
-        
-        <p>When I built Yoga Lab, we trained over 7,000 yoga instructors. Our teacher training program was accredited by Yoga Alliance. And the entire framework came down to one question we taught every teacher to ask: <em>Is this serving the student, or is this serving my ego?</em> That's love as the lens—not the destination, but the thing you see through. It's not sentimental. It's rigorous. It requires constant self-examination. And it produces measurably different outcomes than the alternative.</p>
-        
-        <hr>
-        
-        <p>The church is dying. Not because people stopped believing in something—the hunger for meaning is higher than ever. The church is dying because it stopped answering the only question that matters: <em>What do we actually worship?</em> People left because the answer seemed to be power. Politics. Tribal belonging. Institutional survival. The reference point shifted, and everyone felt it even if they couldn't articulate it. "Spiritual but not religious" is the fastest-growing category in American faith. That's not a rejection of the sacred. It's a rejection of institutions that lost their reference point.</p>
-        
-        <p>And now, a new institution is rising. One that will shape this century more than any other. Artificial intelligence. And it faces the exact same crisis.</p>
-        
-        <hr>
-        
-        <p>The public debate about AI is: Will it be safe or dangerous? Will it take our jobs? Will it be "aligned" with human values? These questions assume the problem is technical. It isn't. The problem is the same one the church faces: <em>What does this institution actually serve?</em></p>
-        
-        <p>If the answer is "shareholder value" or "capability advancement" or "winning the race against China," then no amount of alignment research will earn public trust. People can feel when an institution's reference point is something other than their flourishing. They might not be able to articulate it, but they feel it. The church taught us this. People don't leave institutions because of theological disagreements. They leave because they sense the institution no longer serves what it claims to serve.</p>
-        
-        <hr>
-        
-        <p>I can already hear the objection: "Love isn't a business metric. This is naive."</p>
-        
-        <p>But here's the thing—neither was "Don't be evil."</p>
-        
-        <p>Google said it anyway. They put it in their IPO documents. They made it their reference point. And we noticed—immediately and viscerally—when they stopped meaning it.</p>
-        
-        <p>The declaration is the accountability mechanism. That's the point.</p>
-        
-        <p>When an institution says "we serve love" or "we serve human flourishing" or even "don't be evil," they create a standard against which their actions can be measured. They give the public language to hold them accountable. But here's what made Google's abandonment possible: opacity. They could quietly stop meaning it because no one could see inside. The antidote isn't a better slogan—it's transparency so radical that abandonment becomes immediately visible. You can't secretly stop serving love when you're showing your work.</p>
-        
-        <p>And here's what the cynics miss: this isn't naive. It's the winning strategy.</p>
-        
-        <p>The church and AI companies have more in common than either would admit. Both run on belief. Both need users to trust them—not just use them, but <em>commit</em>. I'm an Apple user. I own only Apple products. I'll never leave. That's not rational consumer behavior—that's faith. It's the same mechanism. And faith follows love.</p>
-        
-        <p>We trust the ones who love us. More precisely: we trust the ones we <em>see</em> loving us. When you watch someone stand up for protection, for family, for the vulnerable—something in you says <em>that one is safe</em>. That's not sentiment. That's pattern recognition refined over millennia. It's the function that kept us alive.</p>
-        
-        <p>This is what gives "love" teeth. It's not a platitude—it's the action that generates trust. And trust is the only currency these institutions can't manufacture. They can build capability, scale infrastructure, optimize engagement. They cannot make someone believe in them. That has to be earned. And it's earned the same way it's always been earned: by visibly serving something beyond yourself.</p>
-        
-        <p>Ultimately, love may be the only action. We preserve what we love. Happiness, freedom, family, truth—we fight to keep them because we love them. Strip away the sentiment and that's what's left: the act of keeping something alive. Everything else is extraction or decay. This is why love wins. Not because it's nice. Because it's the only thing that sustains.</p>
-        
-        <p>People trust the ones who love them. That's survival math. Trust is the currency that compounds. The institutions that point their lens toward love—and prove it through transparency, through showing their work, through treating users as partners rather than products—those are the ones that will still be standing in fifty years. Extraction is a short game. Love is the long one.</p>
-        
-        <p>I trust Anthropic because they're the most transparent company in the AI industry. They publish their safety research. They show their reasoning. They treat me like I can handle the truth. That's not marketing—that's the apparatus de-fogged. That's love in institutional form.</p>
-        
-        <p>Right now, most AI companies have no declared reference point. They talk about "safety" and "beneficial AI" and "alignment," but these are technical terms that mean nothing to the average person. There's no simple standard against which to measure their actions.</p>
-        
-        <p><em>Love is our lens</em> would change that.</p>
-        
-        <p>Not a marketing slogan. A declaration of what the apparatus is pointed toward. The frame through which every product decision passes: Does this serve human flourishing, or does it serve something else?</p>
-        
-        <p>I'm not pretending this is simple. "Flourishing" is contested. An AI optimizing naively for human happiness could conclude we'd be better off sedated. That's precisely why the lens must be declared publicly—so the definition of flourishing becomes a democratic conversation rather than an engineering decision made in private. The alternative isn't avoiding the question. It's letting a handful of researchers answer it for everyone without telling us what they decided.</p>
-        
-        <hr>
-        
-        <p>Let me tell you what happened when I discovered that video was fake.</p>
-        
-        <p>I didn't feel deceived. I felt clarified.</p>
-        
-        <p>Because the video articulated something that no real institution had managed to articulate. An algorithm produced the moral clarity that the actual church has failed to produce.</p>
-        
-        <p>Millions of people watched that video and felt: <em>Yes. This is what I've been waiting for. This is what the church should be.</em></p>
-        
-        <p>The video is a prophecy. It shows us what people hunger for. The question is whether any real institution will fulfill it.</p>
-        
-        <p>Here's what's remarkable: some already are. Three days ago, over 100 clergy knelt in prayer on the frozen tarmac of the Minneapolis airport—in minus-twenty-degree weather—and were arrested for blocking deportation flights. In November, the U.S. Conference of Catholic Bishops issued a "Special Message" on immigration—only the second in twelve years—opposing mass deportations by a vote of 216 to 5. In Chicago, priests have been arrested trying to bring communion to detainees at an ICE facility. Cardinal McElroy leads processions. Pope Leo tells American bishops: "The Church cannot stay silent before injustice."</p>
-        
-        <p>The fake bishop video went viral because it depicted something people were desperate to see. What's actually happening—real clergy, real arrests, real confrontation—hasn't captured the public imagination the same way. Why? Because there's no crystallizing moment. No one has stood at the cathedral doors and said the thing clearly: <em>My god is love.</em></p>
-        
-        <p>The actions are there. The declaration is missing.</p>
-        
-        <p>Religion has always known this is a competition. That's what missions are—the work of conversion. For two thousand years, the church has understood that belief is something you earn, spread, and can lose to a rival. AI companies are in the same race for belief and haven't admitted it yet. They call it "user adoption" and "trust metrics," but it's the same thing: getting people to commit.</p>
-        
-        <p>There's a vacuum where moral clarity used to live. Someone will fill it. The church has two thousand years of practice at this and is squandering the advantage. AI companies are twenty years old and building the infrastructure of the next century. Whoever declares first—and means it—earns the trust the other forfeits.</p>
-        
-        <hr>
-        
-        <p>The collaboration itself was part of the revelation.</p>
-        
-        <p>I came to Claude—an AI—to fact-check, to learn, to go deeper. And when we found out the video was fabricated, something unexpected happened. The AI didn't just deliver information. We sat with the question together: <em>What does it mean that something "fake" produced something true?</em></p>
-        
-        <p>I know what you're thinking. It's code. It's a language model predicting tokens. And you're right. But the collaboration produced something I wouldn't have reached alone. Whether that's "real" partnership or a very good simulation of one, the output served my understanding rather than someone else's engagement metrics. That distinction matters more than the metaphysics.</p>
-        
-        <p>I'm not saying Claude is perfect or that AI has solved its values problem. I'm saying I experienced, in real-time, what it feels like when the output serves my flourishing rather than someone else's metrics.</p>
-        
-        <p>And I want more of that. For me and for everyone.</p>
-        
-        <hr>
-        
-        <p>The church and AI companies are facing the same existential question. Both have lost public trust. Both are seen as serving something other than the people they claim to serve. Both have an opportunity—right now—to declare their actual reference point.</p>
-        
-        <p>For the church, this means stepping back from political tribalism and forward into universal truth. Not "love for people who agree with us." Not "love as a weapon against our enemies." Love as the thing that every tradition circles: <em>You have many ways of viewing God.</em> The mystics knew this. The saints knew this. The theologians know this. Someone just needs to say it clearly, in the public square, at the cathedral doors.</p>
-        
-        <p>For AI companies, this means stepping back from technical jargon and forward into human-scale values. Not "alignment" and "safety benchmarks." Love as the lens. Flourishing as the frame. The apparatus de-fogged: <em>Does this serve the person using it, or does it serve something else?</em></p>
-        
-        <p>These aren't separate problems. They're the same problem. And the solution has been sitting there for two thousand years, waiting for someone to actually try it.</p>
-        
-        <hr>
-        
-        <p>The bishop on those cathedral steps doesn't exist. But the words he spoke are true. <em>My god is love.</em> Someone needs to say it for real. Some institution needs to mean it.</p>
-        
-        <p>I put a flag on my house because an algorithm showed me what I was waiting for. I haven't taken it down because the hunger it revealed is real, even if the video wasn't.</p>
-        
-        <p>The question isn't whether AI is dangerous.</p>
-        
-        <p>The question isn't whether the church is relevant.</p>
-        
-        <p>The question is the same for both: <em>What do you worship?</em></p>
-        
-        <p>Declare it. Mean it. Let everything else follow.</p>
-        
-        <p>I'm starting with a flag and an essay. The rest I'll figure out as I go.</p>
-        
-        <p class="bio">Michael Schaeffer has spent fifteen years teaching yoga and a decade leading companies. He now researches AI safety and governance. He lives in Denver with his husband Owen and their two dogs.</p>
-    </main>
+<div class="container">
+  <div class="equation">R = C − A</div>
+  <div class="subtitle">The Law of Recognition</div>
+  <div class="key-section">
+    <div class="key-row">
+      <input type="password" id="apiKey" class="key-input" placeholder="sk-ant-... (your Anthropic API key)">
+      <button onclick="checkKey()" style="background:transparent;border:1px solid #444;color:#888;padding:8px 16px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:12px;cursor:pointer;">Set</button>
+    </div>
+    <div id="keyStatus" class="key-status" style="color:#666">No key set — example results available below</div>
+    <div class="key-note">Your key stays in your browser. Never sent anywhere except api.anthropic.com. No server. No tracking. View source.</div>
+  </div>
+  <div id="inputPhase">
+    <div class="prompt-text">What's the hardest unsolved problem in your field?</div>
+    <div id="examplesContainer" class="examples"></div>
+    <div class="or-divider">or type your own</div>
+    <textarea id="questionInput" class="input-area" placeholder="The math will either formalize it or tell you why it can't." rows="3"></textarea>
+    <div class="submit-row"><button id="submitBtn" class="submit-btn" onclick="runCustom()">Formalize →</button></div>
+    <div class="footnote">Three axioms. Five theorems. 161 independent validations.<br>No trust required.</div>
+  </div>
+  <div id="thinkingPhase" class="hidden">
+    <div class="thinking">
+      <div id="thinkingQ" class="thinking-q"></div>
+      <div id="thinkingDots" class="thinking-dots">Reading the paper...</div>
+      <div class="thinking-sub">A fresh instance is reading 344 lines of pure math<br>and applying it to your question cold.</div>
+    </div>
+  </div>
+  <div id="resultPhase" class="hidden">
+    <div id="resultQ" class="result-q"></div>
+    <div id="verdictWrap" class="verdict-wrap"></div>
+    <div id="resultBox" class="result-box"></div>
+    <div class="reset-row"><button class="reset-btn" onclick="reset()">Try another problem →</button></div>
+    <div class="result-note" id="resultNote"></div>
+  </div>
+  <div class="footer">Schaeffer, 2026</div>
+</div>
+<script>
+const PAPER = `# The Law of Recognition: Formal Content Only
+## R = C - A
+This document contains only the axioms, definitions, theorems, proofs, and formal structure.
+
+## Definitions
+R (Recognition) -- accurate apprehension of what is actually present. R = I(X; f(Y)).
+C (Contact) -- degree of encounter with reality. C = I(X; T_B(Y)).
+A (Agenda) -- post-channel distortion. A = I(X; T_B(Y)) - I(X; f(T_B(Y))).
+A Decomposition: A = A_bias + A_capacity. A_bias is motivated distortion (reducible through architectural change). A_capacity is unmotivated limitation (reducible through expansion of f). Both >= 0. Axiom 2 applies to both.
+The Equation: R = C - A
+
+## Axioms
+Axiom 1 (DPI / Non-negativity). A >= 0. By Data Processing Inequality.
+Axiom 2 (Self-Observation Floor). For any self-modeling system S, A* > 0. The self-observation channel has strictly positive noise. Composite Lipschitz constant L = gamma*lambda measures net self-observation effect. Both contraction (L<1) and confirmation-bias (L>=1) regimes yield A* > 0.
+Axiom 3 (Substrate Independence / Functoriality). For exact functor F between categories with recognition structures, the image of the exact sequence is exact.
+
+## Channel Boundary
+C = I(X; T_B(Y)). A is exclusively post-channel distortion.
+r(B) = (dR/dB)/(dC/dB). When r=1 all improvement converts to recognition. When r<1 some absorbed by agenda. When r=0 bottleneck entirely A.
+Boundary Criterion: dR/dC > 0 = C-expanding. dR/dC <= 0 = A-injecting. dA/dB > 0 = actively resisting contact.
+Partition Problem: R=C-A does not provide domain-general C/A partition. Three partial resolutions: convergence, interventionist, structural transfer.
+
+## Theorem 1: Recognition Capacity Bound
+R(n) <= H(X). R(n) <= C(n). Bound tight when processing is sufficient statistic.
+
+## Theorem 2: Framework Classification
+Three classes: (i) Full: R_inf=H(X), A->0. (ii) Partial: 0<R_inf<H(X), A_inf>0. (iii) Null: R_inf=0.
+Class (ii) is stable. Escaping Class (ii) requires modifying the processing architecture itself.
+
+## Theorem 3: Thermodynamic Cost
+E_A >= A(n)*k_B*T*ln2. When A>0, Landauer applies. No processing regime exempt.
+
+## Theorem 4: Convergence Rate
+Rate limited by min(D*, a). D*=channel quality, a=framework learning rate.
+Bottleneck: If D* binding, need more data. If a binding, need better framework.
+
+## Theorem 5: Recognition Cascade
+For chain R_1->D_1->R_2->...: R_n <= R_{n-1} for all n.
+Scope: holds for pure chains. For DAGs with independent source access, R_n may exceed R_{n-1} through fresh contact.
+Corollary 5.1: Transparent Agenda Paradox -- declared intent provides side information.
+Corollary 5.2: Pedagogical Inequality -- transparent dissemination distorts less.
+Corollary 5.3: Generation Problem -- cascade bounds transmitted fidelity, not receiver total recognition.
+
+## Theorem 6: Meta-Recursive Generativity
+F is generative if meta-application Phi(F) contains novel instances. Self-applicability, validity, receiver surplus, bounded convergence all hold.
+A_model Bound: R_meta = C_meta - A_model. Convergence requires multiple independent observers.
+
+## Consciousness Boundary
+R=C-A is theory of access consciousness. Phenomenal consciousness not an object in InfoCat. Recognition of consciousness requires minimum two entities (Axiom 2: A_self>0).
+The explanatory gap IS the self-observation floor. This is a theorem.
+
+Summary: Monotonicity C(n)->H(X). Trichotomy I/II/III. Cascade R_n<=R_{n-1}. Bottleneck min(D*,a). Self-Application: theory predicts its own A.`;
+
+const ALL_EXAMPLES = [
+  { id: 'pharma', domains: ['pharma','drug','biotech','medicine','clinical'],
+    q: "Why do 95% of drug candidates fail in clinical trials despite passing preclinical testing?",
+    label: "Drug Development" },
+  { id: 'education', domains: ['education','teaching','school','pedagogy','learning'],
+    q: "How do you measure whether a teacher is actually effective vs. just popular with students?",
+    label: "Education" },
+  { id: 'policy', domains: ['policy','genocide','conflict','prevention','government','diplomacy','un'],
+    q: "Why can't early warning systems prevent genocide when we can see it coming years in advance?",
+    label: "Conflict Prevention" },
+  { id: 'ai', domains: ['ai','ml','alignment','safety','deeplearning','machinelearning'],
+    q: "Why do deep learning models generalize when classical learning theory predicts they shouldn't?",
+    label: "Machine Learning" },
+  { id: 'hiring', domains: ['hiring','hr','recruiting','talent','interview','people'],
+    q: "Why do job interviews consistently fail to predict actual job performance?",
+    label: "Hiring" }
+];
+const CACHED = {
+  pharma: `## Classification: FORMALIZABLE\n\n## Formal Mapping\n\n**Domain Variables:**\n- X = actual therapeutic efficacy of a drug candidate in humans\n- Y = preclinical data (in vitro assays, animal models, Phase I/II signals)\n- f = the drug development processing pipeline\n- R = accurate identification of which candidates will work in humans\n- C = information about human efficacy available through preclinical channels\n- A = systematic distortions introduced by the development pipeline itself\n\n## The Core Diagnosis\n\n**The entire target-based R&D model is a Class II system (Theorem 2).** The processing function f factors through a fixed lossy map T: the commitment to a specific molecular target. Once a target is selected, all subsequent data is filtered through that commitment.\n\nBy Theorem 2: R(n) <= C_T < H(X). No amount of additional preclinical data can overcome the information ceiling imposed by the target hypothesis.\n\n**The 95% failure rate is not a data problem. It is an architectural problem.**\n\n## Why More Data Doesn't Help\n\nThe r diagnostic is devastating here. Drug development has been increasing B (more data, better assays, larger trials) for decades. If r ~ 0, then dR/dB ~ 0 despite increasing dC/dB. The bottleneck is entirely in A.\n\nThis is exactly what we observe: the industry spends more on R&D every year and the success rate has not improved. Eroom's Law (inverse Moore's Law for pharma) is a direct empirical signature of r -> 0.\n\n## Falsifiable Predictions\n\n**Prediction 1:** Phenotypic screening approaches (which bypass target commitment, changing the processing architecture) should have systematically higher hit rates than target-based approaches.\n\n**Prediction 2:** Adding more preclinical data of the same type will not improve clinical success rates. Only architectural changes can shift R.\n\n**Prediction 3:** The cascade theorem (Theorem 5) predicts information loss at each handoff: basic research -> preclinical -> Phase I -> Phase II -> Phase III. The cumulative loss across 5+ stages explains why a 95% failure rate is structurally predictable.\n\n**Prediction 4:** By Axiom 2, the industry cannot accurately assess its own bias. Self-audits of R&D productivity are themselves subject to A_self > 0.\n\n## The Bottleneck Theorem Applied\n\nD* (data quality) has been improving for decades. a (framework learning rate) has been approximately zero -- the target-based paradigm has been dominant since the 1990s. The binding constraint is a. The industry is optimizing the wrong variable.\n\n**Escaping Class II requires modifying the processing architecture itself** (Theorem 2). Not better data within the current paradigm, but fundamentally different approaches to drug discovery.`,
+  education: `## Classification: FORMALIZABLE\n\n## Formal Mapping\n\n**Domain Variables:**\n- X = actual teaching quality (the reality being recognized)\n- Y_k = observation through channel k (test scores, classroom observations, student surveys, peer review)\n- f_k = processing function applied to each observation channel\n- R = accurate assessment of teaching effectiveness\n- C_k = information available through channel k\n- A_k = distortion introduced by each evaluation method's processing\n\n## The Core Problem\n\nEach evaluation method constitutes a separate recognition channel with its own characteristic agenda.\n\n**Student evaluations:** Y_student has high C for engagement/likability but low C for actual learning. The processing function f_student conflates "I enjoyed this" with "I learned from this." A_student includes: recency bias, grade expectations, entertainment preference, demographic biases.\n\n**Test scores:** Y_test has measurable C for specific content knowledge but A_test includes: teaching to the test (a Class II lock-in where f factors through the test format), inability to measure deep understanding, and selection effects.\n\n**Classroom observation:** Y_observation has moderate C but A_observation includes: Hawthorne effects, observer training biases, and single-snapshot sampling error.\n\n## Convergence Criterion\n\nThe framework predicts: **combine independent channels.** Components of teaching quality that are invariant across student surveys, test scores, and classroom observations are more likely to be C (actual quality) than A (method-specific distortion).\n\n## Theorem 2 Applied: Each Method Alone Is Class II\n\nAny single evaluation method factors through its own fixed lossy map.\n\n**Prediction 1:** No single evaluation method, no matter how refined, can exceed its architectural ceiling.\n\n**Prediction 2:** Multi-method evaluation will outperform any single method, and the improvement will be quantifiable.\n\n## Axiom 2: Self-Evaluation Has a Floor\n\nBy Axiom 2, A_self > 0 for teachers evaluating their own effectiveness. This is a theorem, not an empirical finding.\n\n**Prediction 3:** Teacher self-assessment accuracy has a measurable ceiling that cannot be improved through training or reflection alone. External observation is structurally required.\n\n## The r Diagnostic\n\n**Prediction 4:** r will vary systematically by evaluation method. Methods with r ~ 0 should be de-weighted; methods with higher r should be invested in.`,
+  policy: `## Classification: FORMALIZABLE\n\n## Formal Mapping\n\n**Domain Variables:**\n- X = actual state of affairs on the ground (mass atrocity risk level, escalation dynamics)\n- Y = early warning signals (reports, intelligence, media, satellite imagery, refugee flows)\n- f = processing function of decision-making bodies (UN Security Council, national governments)\n- R = accurate recognition leading to effective prevention action\n- C = information available through warning channels\n- A = agenda distortions in processing that information\n\n## The Devastating Diagnosis\n\nThis domain has r ~ 0. That single number explains the entire pattern.\n\nEarly warning systems have been improving for decades. More data, better satellite imagery, more sophisticated risk models. C has been steadily increasing. Yet R has not improved.\n\nBy the r diagnostic: when dR/dB ~ 0 despite dC/dB > 0, the bottleneck is entirely in A.\n\n**The entire early warning investment is provably wasted when the bottleneck is agenda, not contact.**\n\n## Where A Lives\n\n**The UN Security Council veto is literally a fixed lossy map (Theorem 2).** Any information about genocide risk that passes through the UNSC is filtered through the veto structure. P5 members with strategic interests can and do suppress recognition regardless of contact quality.\n\nBy Theorem 2: R_UNSC <= C_veto < H(X). The system is permanently Class II.\n\n**National sovereignty doctrine** functions as additional agenda. **Bureaucratic incentive structures** add cascade losses: each organizational handoff satisfies R_n <= R_{n-1} (Theorem 5).\n\n## Falsifiable Predictions\n\n**Prediction 1:** Improving early warning quality without changing the processing architecture will have zero effect on prevention outcomes.\n\n**Prediction 2:** Automatic triggers that bypass the veto structure would shift the system to Class I.\n\n**Prediction 3:** States with strategic interests will have systematically higher A (lower r) than disinterested states.\n\n**Prediction 4:** By the Transparent Agenda Paradox (Corollary 5.1), states that openly declare their strategic interests should produce less net information loss than states claiming objective assessment.\n\n## The Thermodynamic Angle\n\nBy Theorem 3: the energy cost of maintaining the agenda is at least A * k_B * T * ln 2. As C increases (more evidence accumulates), maintaining A requires increasing energy expenditure. This predicts that denial becomes increasingly unstable -- exactly the pattern observed in late-stage genocides where denial collapses suddenly.\n\n## Why This Matters\n\nThe framework identifies the precise architectural change required. The field has spent decades on the wrong variable (C). The binding constraint is f. Change the processing architecture, and prevention becomes structurally possible for the first time.`,
+  ai: `## Classification: PARTIALLY FORMALIZABLE\n\n## The Problem\n\nDeep networks with parameters p >> n generalize well empirically. Classical learning theory (VC dimension, Rademacher complexity) predicts catastrophic overfitting. The bounds are empirically vacuous for modern deep networks.\n\n## Is Classical Learning Theory a Class II Framework?\n\n**Yes.** This maps cleanly onto Theorem 2. Classical learning theory's processing architecture -- worst-case uniform convergence bounds over hypothesis classes -- is precisely a fixed lossy map T. It compresses the reality "does this model generalize?" through the bottleneck of worst-case supremum over all distributions.\n\nThis map discards distributional structure, implicit regularization geometry, and the specific optimization trajectory -- all of which carry information about generalization.\n\nBy the DPI: R_classical(n) <= I(X; T_worst-case(Y^n)) <= C_T < H(X)\n\nTherefore A_inf >= H(X) - C_T > 0. Classical learning theory is permanently partially recognizing generalization.\n\nThe stability clause is critical: **Escaping Class (ii) requires modifying the processing architecture itself.** This explains why no amount of tighter constants within the VC/Rademacher framework can close the gap.\n\n## Does Overparameterization Increase C Rather Than A?\n\nThe Decoder Resolution principle applies. Overparameterization changes the channel's conditional distribution -- the network can represent finer features of the input-output relationship. This is a change to p(Y|X), expanding C.\n\nSGD's implicit regularization (selecting flat minima, following particular trajectories) is also channel-side: it determines which observations the network makes, not post-hoc distortion.\n\nSo overparameterization increases C **without proportionally increasing A**, because SGD's implicit bias acts as channel selection, not post-channel distortion.\n\n## The Double Descent Connection\n\nEmpirically, increasing parameters improves test performance beyond the interpolation threshold. This means dR/dC > 0 in the overparameterized regime -- confirming overparameterization is C-expanding. Classical theory predicts dR/dC <= 0, which is the framework misclassifying a C-expansion as A-injection.\n\n## The Bottleneck Theorem\n\nFor classical learning theory applied to deep networks, a (the framework learning rate) is binding. The channel quality D* is fine -- the data carries the information. But the framework's processing architecture (worst-case bounds) converges slowly or to the wrong limit.\n\nThe prescription: change the framework, not the data.\n\n## Verdict: PARTIALLY FORMALIZABLE\n\nThe framework gives a clean formal account of why classical learning theory fails (it is provably Class II via Theorem 2). It provides the correct vocabulary for the overparameterization question. But determining whether specific mechanisms (SGD implicit regularization, overparameterization) fall on the C-side or A-side of the boundary requires domain-specific empirical work that the framework structures but does not resolve autonomously.`,
+  hiring: `## Classification: FORMALIZABLE\n\n## The Mapping\n\n**X** = candidate's actual capability (the reality to be recognized)\n**Y** = interview observations (resume, answers, work samples, references -- the channel)\n**f** = interviewer's post-observation processing (where biases live)\n\nR_hire = C_hire - A_hire\n\nHiring is literally the framework's core structure: an observer (interviewer) has a channel to reality (candidate capability) and applies post-channel processing (biased evaluation).\n\n## Three Key Predictions\n\n### 1. Structured > Unstructured Interviews\n\nUnstructured interviews maximize degrees of freedom in f. Halo effect, similarity bias, first-impression anchoring are all components of f that are logically irreversible. Structured interviews constrain f toward a sufficient statistic, driving A toward zero.\n\nBy the Boundary Criterion: structured interviews are C-expanding (more contact converts to more recognition). Unstructured interviews risk being A-injecting (more time can decrease R if biases grow faster than information).\n\n### 2. Work Samples > Interviews\n\nWork samples change the channel itself. A work sample captures I(X; Y) closer to H(X_capability) because performance on actual work is a less lossy encoding than verbal self-report.\n\nSimultaneously, work samples constrain f -- when evaluating code output or a design exercise, there is less room for halo effect. Both C increases and A decreases. R improves on both terms.\n\nThe r diagnostic: work samples push r -> 1 (all channel improvement converts to recognition). Traditional interviews have r < 1.\n\n### 3. "Culture Fit" Blocks Diversity\n\n"Culture fit" is a post-channel processing function that is a fixed lossy map T (Theorem 2). It factors through a projection that discards information about capability while retaining information about similarity-to-existing-team.\n\nBy Theorem 2's stability proof: the system is stuck in partial recognition. Increasing the pipeline (more C) doesn't help when A is the binding bottleneck.\n\n**You can't fix culture-fit filtering by interviewing more diverse candidates; you have to change the evaluation function f.**\n\n## Why FORMALIZABLE\n\nEvery major empirical finding in hiring research maps to a specific theorem:\n\n- Structured > unstructured: Constraining f reduces A (Boundary Criterion)\n- Work samples > interviews: Higher C channel + lower A (Decoder Resolution)\n- Culture fit blocks diversity: Class II stability, A as bottleneck (Theorem 2)\n- First-impression anchoring: Confirmation-bias regime (Axiom 2)\n- Interview cascades lose signal: R_n <= R_{n-1} (Theorem 5)\n- Credential proxy: Lossy map substituted for direct channel (Theorem 2)`
+};
+// Domain routing
+const params = new URLSearchParams(window.location.search);
+const domainParam = (params.get('domain') || '').toLowerCase();
+
+function getDomainMatch() {
+  if (!domainParam) return null;
+  for (let i = 0; i < ALL_EXAMPLES.length; i++) {
+    if (ALL_EXAMPLES[i].id === domainParam) return i;
+    if (ALL_EXAMPLES[i].domains.some(d => domainParam.includes(d) || d.includes(domainParam))) return i;
+  }
+  return null;
+}
+
+const featuredIdx = getDomainMatch();
+const DEFAULT_SHOW = [0, 1, 2]; // pharma, education, policy
+
+function buildExamples() {
+  const container = document.getElementById('examplesContainer');
+  let order;
+  if (featuredIdx !== null) {
+    // Featured domain first, then 2 others
+    order = [featuredIdx];
+    for (const i of DEFAULT_SHOW) { if (i !== featuredIdx && order.length < 3) order.push(i); }
+    if (order.length < 3) {
+      for (let i = 0; i < ALL_EXAMPLES.length; i++) { if (!order.includes(i) && order.length < 3) order.push(i); }
+    }
+  } else {
+    order = DEFAULT_SHOW;
+  }
+  order.forEach((idx, pos) => {
+    const ex = ALL_EXAMPLES[idx];
+    const btn = document.createElement('button');
+    btn.className = 'example-btn' + (pos === 0 && featuredIdx !== null ? ' example-featured' : '');
+    btn.textContent = ex.q;
+    btn.onclick = () => runExample(ex.id);
+    container.appendChild(btn);
+  });
+}
+
+let apiKey = '';
+let dotInterval;
+
+function checkKey() {
+  apiKey = document.getElementById('apiKey').value.trim();
+  const status = document.getElementById('keyStatus');
+  if (apiKey.startsWith('sk-ant-')) {
+    status.textContent = '\u2713 Key set \u2014 ready to formalize any question';
+    status.style.color = '#4ade80';
+  } else if (apiKey) {
+    status.textContent = '\u26a0 Key should start with sk-ant-...';
+    status.style.color = '#666';
+  } else {
+    status.textContent = 'No key set \u2014 example results available below';
+    status.style.color = '#666';
+  }
+}
+
+function show(id) {
+  ['inputPhase','thinkingPhase','resultPhase'].forEach(p => {
+    document.getElementById(p).classList.toggle('hidden', p !== id);
+  });
+}
+
+function startDots() {
+  let count = 0;
+  const el = document.getElementById('thinkingDots');
+  dotInterval = setInterval(() => {
+    count = (count + 1) % 4;
+    el.textContent = 'Reading the paper' + '.'.repeat(count);
+  }, 400);
+}
+function stopDots() { clearInterval(dotInterval); }
+function renderMarkdown(text) {
+  return text.split('\n').map(line => {
+    if (line.startsWith('## ')) return '<h2>' + line.slice(3) + '</h2>';
+    if (line.startsWith('### ')) return '<h3>' + line.slice(4) + '</h3>';
+    if (line.startsWith('# ')) return '<h1>' + line.slice(2) + '</h1>';
+    if (line.startsWith('- ')) return '<p>\u2022 ' + line.slice(2) + '</p>';
+    if (line.trim() === '---') return '<hr>';
+    if (line.trim() === '') return '<br>';
+    line = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    return '<p>' + line + '</p>';
+  }).join('\n');
+}
+
+function showResult(question, text, live) {
+  const match = text.match(/(FORMALIZABLE|PARTIALLY FORMALIZABLE|NOT FORMALIZABLE|INVALID)/);
+  const verdict = match ? match[1] : null;
+  document.getElementById('resultQ').textContent = '\u201c' + question + '\u201d';
+  const vw = document.getElementById('verdictWrap');
+  if (verdict) {
+    let cls = 'FORMALIZABLE';
+    if (verdict.startsWith('PARTIALLY')) cls = 'PARTIALLY';
+    else if (verdict.startsWith('NOT')) cls = 'NOT';
+    else if (verdict === 'INVALID') cls = 'INVALID';
+    vw.innerHTML = '<span class="verdict verdict-' + cls + '">' + verdict + '</span>';
+  } else { vw.innerHTML = ''; }
+  document.getElementById('resultBox').innerHTML = renderMarkdown(text);
+  document.getElementById('resultNote').textContent = live
+    ? 'Generated live by a fresh AI instance reading the math cold. Your key, your machine.'
+    : 'Pre-computed result from our validation suite. Add your API key to run new questions live.';
+  show('resultPhase');
+}
+
+function runExample(exId) {
+  const ex = ALL_EXAMPLES.find(e => e.id === exId);
+  if (!ex) return;
+  apiKey = document.getElementById('apiKey').value.trim();
+  if (apiKey.startsWith('sk-ant-')) { runLive(ex.q); }
+  else if (CACHED[exId]) { showResult(ex.q, CACHED[exId], false); }
+}
+async function runCustom() {
+  const q = document.getElementById('questionInput').value.trim();
+  if (!q) return;
+  apiKey = document.getElementById('apiKey').value.trim();
+  if (!apiKey.startsWith('sk-ant-')) {
+    alert('Enter your Anthropic API key to run custom questions. The examples above work without a key.');
+    return;
+  }
+  await runLive(q);
+}
+
+async function runLive(question) {
+  document.getElementById('thinkingQ').textContent = '\u201c' + question + '\u201d';
+  show('thinkingPhase');
+  startDots();
+  const prompt = `You are given a mathematical framework below. Read it carefully. Then apply it to the domain question that follows.\n\n---\n\n${PAPER}\n\n---\n\n## Your Task\nApply the framework above to the following question. Map the domain onto the framework's formal structures (axioms, theorems, definitions). Generate specific, falsifiable predictions that follow from the math. Identify whether the domain is FORMALIZABLE, PARTIALLY FORMALIZABLE, NOT FORMALIZABLE, or INVALID (no observer/channel present).\nBe rigorous. Show your work.\n\n## The Question\n${question}`;
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 4096, messages: [{ role: 'user', content: prompt }] })
+    });
+    const data = await response.json();
+    stopDots();
+    if (data.error) { showResult(question, 'Error: ' + (data.error.message || JSON.stringify(data.error)), true); return; }
+    const text = data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n') || 'No response.';
+    showResult(question, text, true);
+  } catch (err) { stopDots(); showResult(question, 'Error: ' + err.message, true); }
+}
+
+function reset() { document.getElementById('questionInput').value = ''; show('inputPhase'); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildExamples();
+  document.getElementById('questionInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); runCustom(); }
+  });
+  document.getElementById('apiKey').addEventListener('keydown', e => { if (e.key === 'Enter') checkKey(); });
+  // Auto-show featured domain result
+  if (featuredIdx !== null && params.get('auto') === '1') {
+    const ex = ALL_EXAMPLES[featuredIdx];
+    if (CACHED[ex.id]) { showResult(ex.q, CACHED[ex.id], false); }
+  }
+});
+</script>
 </body>
 </html>
